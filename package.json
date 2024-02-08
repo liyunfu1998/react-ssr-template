@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon server_build/bundle.js",
+    "start": "npx nodemon --watch src server_build/bundle.js",
+    "build:client": "npx webpack build --config ./webpack.client.js --watch",
     "build:server": "npx webpack build --config ./webpack.server.js --watch"
   },
   "keywords": [],
