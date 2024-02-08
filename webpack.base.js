@@ -4,11 +4,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /.js$/,
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: ["@babel/preset-env"],
+          presets: ["@babel/preset-env", "@babel/preset-react"],
         },
       },
       {
@@ -21,7 +21,7 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(process.cwd(), "src"),
     },
   },
 };
