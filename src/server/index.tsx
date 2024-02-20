@@ -6,6 +6,8 @@ import router from '@/router'
 import {Route, Routes} from 'react-router-dom'
 import {StaticRouter} from 'react-router-dom/server'
 import {Helmet} from 'react-helmet'
+import {Provider} from 'react-redux'
+import store from '@/stores/serverStore'
 
 const app = express()
 
@@ -13,6 +15,7 @@ app.use(express.static(path.resolve(process.cwd(),'client_build')))
 
 app.get('*', (req,res)=>{
   const content = renderToString(
+    <Provider store={store}>
     <StaticRouter location={req.path}>
       <Routes>
         {
@@ -22,6 +25,7 @@ app.get('*', (req,res)=>{
         }
       </Routes>
     </StaticRouter>
+    </Provider>
   )
 
   const helmet = Helmet.renderStatic()
