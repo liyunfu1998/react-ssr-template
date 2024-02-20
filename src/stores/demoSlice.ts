@@ -14,9 +14,7 @@ export const addNewPost = createAsyncThunk(
 
 const demoStore = createSlice({
   name: "demo",
-  initialState: {
-    content: "默认数据",
-  },
+  initialState: typeof window !=='undefined' ? (window as any)?.context?.state?.demo : {content: "demo"},
   reducers: {},
   extraReducers(builder) {
     builder
