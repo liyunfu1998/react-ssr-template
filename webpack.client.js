@@ -6,7 +6,7 @@ module.exports = merge(baseConfig, {
   mode: 'development',
   entry: './src/client/index.tsx',
   output:{
-    filename: 'index.js',
+    filename: 'client.js',
     path: path.resolve(process.cwd(), 'client_build')
   }
 })

@@ -4,7 +4,7 @@ const baseConfig = require("./webpack.base.js");
 
 module.exports = merge(baseConfig, {
   mode: "development",
-  entry: "./src/server/index.js",
+  entry: "./src/server/index.tsx",
   target: "node",
   output: {
     filename: "bundle.js",
